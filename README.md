@@ -63,7 +63,7 @@ Strap.status()
 
 ### Events
 
-There are several events that can be subscribed to:
+There are several events that can be subscribed too.
 
 | **Name** | **Description** | 
 | :--- | ---: |
