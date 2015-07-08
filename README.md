@@ -66,7 +66,7 @@ Strap.status()
 There are several events that can be subscribed to:
 
 | **Name** | **Description** | 
-| :--- | --- | ---: | ---: |
+| :--- | ---: |
 | cancel | The user has opened the window, but cancelled prior to connecting their device |
 | connect | The user has connected their device |
 | error | An error has occurred |
