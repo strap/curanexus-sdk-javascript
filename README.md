@@ -20,7 +20,7 @@ before interacting with any strap API.  Once complete, strap will emit a
 ```javascript
 // Setup SDK, passing in the Read Token for the Project
 var Strap = $.strap({token:"WRITE-TOKEN", guid: "USER-GUID"})
-// token is required
+// token and guid required
 ```
 
 ### Basic Usage
