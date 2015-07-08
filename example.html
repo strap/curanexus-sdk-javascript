@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Strap Example</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="strap.min.js"></script>
+    <script>
+
+    var connected = false;
+
+    $( document ).ready(function() {
+          
+          // Setup Strap 
+          var Strap = $.strap({token:"WRITE-Token", guid: "USER-GUID"})
+
+          // Check to see if a user is validated
+          Strap.on("status", function(data) {
+
+              // Returns the user connection status
+              if ( connected = Strap.status() ) {
+                // Do something on the status change
+                $("#myButton").text("Disconnect Device");
+              } else {
+                $("#myButton").text("Connect Device");
+              }
+          })
+
+        // Activate button for connection
+        $('#myButton').click(function() {
+          if (connected) {
+              Strap.disconnect() // Set button action
+          } else {
+              Strap.connect() // Set button action
+          }
+        })
+
+
+    });
+    </script>
+</head>
+    <body>
+    <button id="myButton"></button>
+    </body>
+</html>
