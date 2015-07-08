@@ -16,7 +16,7 @@ Strap Client SDK provides an easy to use, tool for hooking Stap registration int
 Include the `strap.min.js` file and establish a reference to the Strap library..
 
 ```javascript
-// Setup SDK, passing in the Read Token for the Project
+// Setup SDK, passing in the Write Token for the Project
 var Strap = $.strap({token:"WRITE-TOKEN", guid: "USER-GUID"})
 // token and guid required
 ```
