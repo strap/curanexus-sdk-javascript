@@ -13,9 +13,7 @@ Strap Client SDK provides an easy to use, tool for hooking Stap registration int
 
 ### Initialization
 
-Once you create your strap instance, a call to `strap.discover()` must be made
-before interacting with any strap API.  Once complete, strap will emit a
-`ready` event.
+Include the `strap.min.js` file and establish a reference to the Strap library..
 
 ```javascript
 // Setup SDK, passing in the Read Token for the Project
