@@ -8,7 +8,7 @@ Strap Client SDK provides an easy to use, tool for hooking Strap registration in
 
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://s3.amazonaws.com/strap-libs/strap.min.js"></script>
+<script src="//d2virtop5oprhp.cloudfront.net/strap.min.js"></script>
 ```
 
 ### Initialization
