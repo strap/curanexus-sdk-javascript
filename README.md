@@ -18,7 +18,8 @@ Include the `strap.min.js` file and establish a reference to the Strap library..
 ```javascript
 // Setup SDK, passing in the Write Token for the Project
 var Strap = $.strap({token:"WRITE-TOKEN", guid: "USER-GUID"})
-// token and guid required
+// token is required
+// guid is optional >> passing in the guid at start will perform an auto-validation and will trigger the "status" event. on compeltion
 ```
 
 ### Basic Usage
@@ -44,14 +45,25 @@ Strap.on("status", function(data) {
 
 The connect method launches the connection window to guide the user thru connecting their device to your application.
 ```javascript
-Strap.connect()
+Strap.connect() // guid needs to be set in initialization or setGuid()
+OR
+Strap.connect("some-guid") // Passing in the guid value when initiating connection 
 ```
 
 #### Disconnect
 
 The disconnect method launches the connection window to remove the device from your application.
 ```javascript
-Strap.disconnect()
+Strap.disconnect() // guid needs to be set in previously
+OR
+Strap.disconnect("some-guid") // Passing in the guid value when initiating connection
+```
+
+#### Set GUID
+
+The setGuid method allows for the GUID value to be set or updated.
+```javascript
+Strap.setGuid("some-guid")
 ```
 
 #### Status
@@ -59,6 +71,15 @@ Strap.disconnect()
 The status method returns true or false based on the users "connection" status based on the "guid" provided.
 ```javascript
 Strap.status()
+```
+
+#### Validate Check
+
+The validate method allows for checking the connection status of a GUID.  Will trigger the "status" event.
+```javascript
+Strap.validate() // guid needs to be set in previously
+OR
+Strap.validate("some-guid") // Passing in the guid value to check status
 ```
 
 ### Events

@@ -2,7 +2,7 @@
 <head>
     <title>Strap Example</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="strap.min.js"></script>
+    <script src="strap.js"></script>
     <script>
 
     var connected = false;
@@ -10,34 +10,44 @@
     $( document ).ready(function() {
           
           // Setup Strap 
-          var Strap = $.strap({token:"WRITE-Token", guid: "USER-GUID"})
+          var Strap = $.strap({token:"WRITE-TOKEN"})
+
+          // Optional way to set GUID
+          Strap.setGuid("some-guid");
 
           // Check to see if a user is validated
           Strap.on("status", function(data) {
-
               // Returns the user connection status
               if ( connected = Strap.status() ) {
                 // Do something on the status change
-                $("#myButton").text("Disconnect Device");
+                $("#connectButton").text("Disconnect Device");
               } else {
-                $("#myButton").text("Connect Device");
+                $("#connectButton").text("Connect Device");
               }
+              console.log("Status", connected)
           })
 
         // Activate button for connection
-        $('#myButton').click(function() {
+        $('#connectButton').click(function() {
           if (connected) {
               Strap.disconnect() // Set button action
           } else {
               Strap.connect() // Set button action
           }
-        })
+        });
 
+        // Activate button for validation check
+        $('#validateButton').click(function() {
+          Strap.validate("some-guid");  
+          // This will trigger the "status" listener
+        });
 
     });
     </script>
 </head>
     <body>
-    <button id="myButton"></button>
+    <button id="connectButton">Connect Device</button>
+    <br><br>
+    <button id="validateButton">Validate</button>
     </body>
 </html>

@@ -11,7 +11,7 @@
         var config = {
                 token: "",
                 guid: "",
-                debug: false,
+                debug: true,
             };
 
         // Strap constructor
@@ -28,7 +28,7 @@
         // Strap.prototype'ing
         $.extend(Strap.prototype, {
                 init: function () {
-                    this._validate()
+                    if(this._config.guid) this._validate()
                 },
                 status: function() {
                     // Getter for user status
@@ -36,11 +36,10 @@
                 },
                 connect: function (guid) {
                     // Check for guid
-                    if ( guid ) this._setConfig( {guid: guid} );
+                    if ( guid ) this.setGuid( guid );
                     
                     // Validate the information
                     if ( this._checkData() ) {
-                        this.log("Ding")
                         this._window = window.open( this._buildURL("connect"), "Strap", "width=380,height=500,scrollbars=yes");
 
                         // Start Polling
@@ -51,15 +50,26 @@
                 },
                 disconnect: function (guid) {
                     // Check for guid
-                    if ( guid ) this._setConfig( {guid: guid} );
+                    if ( guid ) this.setGuid( guid );
                     
                     // Validate the information
                     if ( this._checkData() ) {
-                        this.log("Ding")
                         this._window = window.open( this._buildURL("disconnect"), "Strap", "width=380,height=500,scrollbars=yes");
 
                         // Swap up the validation
                         setTimeout( this._validate.bind(this), 2000)
+                    }
+                },
+                validate: function(guid) {
+                    // Check guid for validation status
+                    if ( guid ) this.setGuid( guid );
+                    this._validate();
+                },
+                setGuid: function(guid) {
+                    if ( guid ) {
+                        this._setConfig( {guid: guid} );
+                    } else {
+                        this._onError("Missing Guid ")
                     }
                 },
                 log: function() { 
