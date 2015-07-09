@@ -77,7 +77,7 @@ Strap.status()
 
 The validate method allows for checking the connection status of a GUID.  Will trigger the "status" event.
 ```javascript
-Strap.validate() // guid needs to be set in previously
+Strap.validate() // guid needs to be set previously
 OR
 Strap.validate("some-guid") // Passing in the guid value to check status
 ```
