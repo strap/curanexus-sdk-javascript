@@ -19,8 +19,9 @@ Include the `strap.min.js` file and establish a reference to the Strap library..
 // Setup SDK, passing in the Write Token for the Project
 var Strap = $.strap({token:"WRITE-TOKEN", guid: "USER-GUID"})
 // token is required
-// guid is optional >> passing in the guid at start will perform an auto-validation and will trigger the "status" event. on compeltion
+// guid is optional
 ```
+NOTE: passing in the guid at start will perform an auto-validation and will trigger the "status" event on compeletion
 
 ### Basic Usage
 
