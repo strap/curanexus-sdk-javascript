@@ -1,6 +1,6 @@
 # Javascript > Strap Client SDK
 
-Strap Client SDK provides an easy to use, tool for hooking Stap registration into existing websites.
+Strap Client SDK provides an easy to use, tool for hooking Strap registration into existing websites.
 
 ### *JQuery is required for the Strap Javascript library.*
 
@@ -84,7 +84,7 @@ Strap.validate("some-guid") // Passing in the guid value to check status
 
 ### Events
 
-There are several events that can be subscribed too.
+There are several events that can be subscribed to.
 
 | **Name** | **Description** | 
 | :--- | :--- |
