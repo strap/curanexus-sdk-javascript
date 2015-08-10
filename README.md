@@ -37,6 +37,7 @@ Strap.on("status", function(data) {
   } else {
     $("#myButton").text("Connect Device");
   }
+  console.log("Status", data); // data will be an object {connected: true/false, platform: "platform-string"}
 })
 ```
 
@@ -58,6 +59,13 @@ The disconnect method launches the connection window to remove the device from y
 Strap.disconnect() // guid needs to be set in previously
 OR
 Strap.disconnect("some-guid") // Passing in the guid value when initiating connection
+```
+
+#### Platform
+
+The platform method returns a string reference to the platform of the user
+```javascript
+Strap.platform()
 ```
 
 #### Set GUID
