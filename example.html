@@ -9,23 +9,23 @@
 
     $( document ).ready(function() {
           
-          // Setup Strap 
-          var Strap = $.strap({token:"WRITE-TOKEN"})
+        // Setup Strap 
+        var Strap = $.strap({token:"WRITE-TOKEN"})
 
-          // Optional way to set GUID
-          Strap.setGuid("some-guid");
+        // Optional way to set GUID
+        Strap.setGuid("some-guid");
 
-          // Check to see if a user is validated
-          Strap.on("status", function(data) {
-              // Returns the user connection status
-              if ( connected = Strap.status() ) {
-                // Do something on the status change
-                $("#connectButton").text("Disconnect Device");
-              } else {
-                $("#connectButton").text("Connect Device");
-              }
-              console.log("Status", connected)
-          })
+        // Check to see if a user is validated
+        Strap.on("status", function(data) {
+            // Returns the user connection status
+            if ( connected = Strap.status() ) {
+              // Do something on the status change
+              $("#connectButton").text("Disconnect Device");
+            } else {
+              $("#connectButton").text("Connect Device");
+            }
+            console.log("Status", data ) // The data value will contain an object { connected: true, platform: "jawbone" }
+        })
 
         // Activate button for connection
         $('#connectButton').click(function() {

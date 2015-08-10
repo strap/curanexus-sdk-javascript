@@ -21,6 +21,7 @@
             this._poller = false;
             this._winOpen = false;
             this._isConnected = false;
+            this._platform = "";
             this._setConfig(options);
             this.init();
         }
@@ -33,6 +34,10 @@
                 status: function() {
                     // Getter for user status
                     return this._isConnected;
+                },
+                platform: function() {
+                    // Getter for user platform
+                    return this._platform;
                 },
                 connect: function (guid) {
                     // Check for guid
@@ -103,7 +108,8 @@
                 },
                 _validator: function(data) {
                     this._isConnected = (data.success || false)
-                    this._onStatus()
+                    this._platform = (data.platform || "")
+                    this._onStatus({connect: this._isConnected, platform: this._platform})
                 },
                 _poll: function() {
                     this.log("Poll")
@@ -111,13 +117,14 @@
                 },
                 _pollResponse: function(data) {
                     this._isConnected = (data.success || false)
+                    this._platform = (data.platform || "")
                     if ( !this._isConnected ) {
                         this.log("Poll Again")
                         this._poller = setTimeout( this._poll.bind(this), 3000 );
                     } else {
                         this.log("Poll Done")
                         if( this._isConnected ) this._onConnect();
-                        this._onStatus()
+                        this._onStatus({connect: this._isConnected, platform: this._platform})
                         this._stopPoller();
                     }
                 },
