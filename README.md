@@ -37,7 +37,8 @@ Strap.on("status", function(data) {
   } else {
     $("#myButton").text("Connect Device");
   }
-  console.log("Status", data); // data will be an object {connected: true/false, platform: "platform-string"}
+  // data will be an object {connected: true/false, platform: "platform-string"}
+  console.log("Status", data); 
 })
 ```
 
