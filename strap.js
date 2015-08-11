@@ -11,7 +11,7 @@
         var config = {
                 token: "",
                 guid: "",
-                debug: true,
+                debug: false,
             };
 
         // Strap constructor
