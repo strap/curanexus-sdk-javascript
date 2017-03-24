@@ -6,7 +6,7 @@
 ;(function ( $, window, document, undefined ) {
 
     "use strict";
-        var url = 'https://api2.straphq.com';
+        var url = 'http://api.curanexus.io';
         // Create the config
         var config = {
                 token: "",
