@@ -6,7 +6,7 @@
 ;(function ( $, window, document, undefined ) {
 
     "use strict";
-        var url = 'https://api.curanexus.io';
+        var url = 'https://api.curanexus.co';
         // Create the config
         var config = {
                 token: "",
