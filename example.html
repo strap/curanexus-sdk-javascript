@@ -1,24 +1,24 @@
 <html>
 <head>
-    <title>Strap Example</title>
+    <title>curaNEXUS Example</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="strap.js"></script>
+    <script src="//du4hmvufyj5o.cloudfront.net/curanexus.min.js"></script>
     <script>
 
     var connected = false;
 
     $( document ).ready(function() {
           
-        // Setup Strap 
-        var Strap = $.strap({token:"WRITE-TOKEN"})
+        // Setup curaNEXUS 
+        var curaNEXUS = $.curanexus({token:"WRITE-TOKEN"})
 
         // Optional way to set GUID
-        Strap.setGuid("some-guid");
+        curaNEXUS.setGuid("some-guid");
 
         // Check to see if a user is validated
-        Strap.on("status", function(data) {
+        curaNEXUS.on("status", function(data) {
             // Returns the user connection status
-            if ( connected = Strap.status() ) {
+            if ( connected = curaNEXUS.status() ) {
               // Do something on the status change
               $("#connectButton").text("Disconnect Device");
             } else {
@@ -30,15 +30,15 @@
         // Activate button for connection
         $('#connectButton').click(function() {
           if (connected) {
-              Strap.disconnect() // Set button action
+            curaNEXUS.disconnect() // Set button action
           } else {
-              Strap.connect() // Set button action
+            curaNEXUS.connect() // Set button action
           }
         });
 
         // Activate button for validation check
         $('#validateButton').click(function() {
-          Strap.validate("some-guid");  
+            curaNEXUS.validate("some-guid");  
           // This will trigger the "status" listener
         });
 
