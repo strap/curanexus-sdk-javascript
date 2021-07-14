@@ -1,23 +1,23 @@
-# Javascript > curaNEXUS Client SDK
+# Javascript > Strap Client SDK
 
-curaNEXUS Client SDK provides an easy to use, tool for hooking curaNEXUS registration into existing websites.
+Strap Client SDK provides an easy to use, tool for hooking strap registration into existing websites.
 
-### *JQuery is required for the curaNEXUS Javascript library.*
+### *JQuery is required for the Strap Javascript library.*
 
 ### Installation
 
 ```html
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//du4hmvufyj5o.cloudfront.net/curanexus.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://waiter-discovery.s3.us-west-2.amazonaws.com/strap.min.js"></script>
 ```
 
 ### Initialization
 
-Include the `curanexus.min.js` file and establish a reference to the curaNEXUS library..
+Include the `strap.min.js` file and establish a reference to the strap library..
 
 ```javascript
 // Setup SDK, passing in the Write Token for the Project
-var curaNEXUS = $.curanexus({token:"WRITE-TOKEN", guid: "USER-GUID"})
+var curaNEXUS = $.strap({token:"WRITE-TOKEN", guid: "USER-GUID"})
 // token is required
 // guid is optional
 ```
@@ -25,7 +25,7 @@ NOTE: passing in the guid at start will perform an auto-validation and will trig
 
 ### Basic Usage
 
-Once curaNEXUS has initialized, setup a handler for the "status" event
+Once strap has initialized, setup a handler for the "status" event
 
 ```javascript
 curaNEXUS.on("status", function(data) {
@@ -106,7 +106,7 @@ There are several events that can be subscribed to.
 
 ### Event Subscribe
 
-Subscribing to the curaNEXUS events allows you to know when a user has tripped any of the events listed above.
+Subscribing to the Strap events allows you to know when a user has tripped any of the events listed above.
 
 ```javascript
 curaNEXUS.on("EVENT-NAME", function(data) {
